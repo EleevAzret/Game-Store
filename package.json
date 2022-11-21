@@ -1,0 +1,32 @@
+{
+  "name": "sg-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp watch --map --sync",
+    "build": "gulp build --clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^3.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "normalize.css": "^8.0.1",
+    "reset.css": "^2.0.2",
+    "sass": "^1.55.0"
+  },
+  "browserslist": "> 0.1%",
+  "dependencies": {
+    "scss-reset": "^1.2.2"
+  }
+}

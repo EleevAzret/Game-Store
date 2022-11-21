@@ -1,0 +1,34 @@
+$montserrat: 'Montserrat', sans-serif;
+
+$green-light: #61A568;
+$green-dark: #425844;
+$blue-dark: #101D2C;
+$white: #F5F5F5;
+$grey: #AAAAAA;
+
+
+@mixin media($screen) {
+	@if $screen == xs {
+		@media only screen and (max-width: 600px) {
+			@content;
+		}
+	}
+
+	@if $screen == s {
+		@media only screen and (max-width: 900px) {
+			@content;
+		}
+	}
+
+	@if $screen == m {
+		@media only screen and (max-width: 1240px) {
+			@content;
+		}
+	}
+
+	@if $screen == l {
+		@media only screen and (min-width: 1800px) {
+			@content;
+		}
+	}
+}

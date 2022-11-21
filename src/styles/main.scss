@@ -1,0 +1,21 @@
+ //import reset file
+@import "../../node_modules/reset.css/reset.css";
+
+//import utilities files
+@import "utilities/vars.scss";
+@import "utilities/utilites.scss";
+
+
+//import base styles and text styles
+@import "base.scss";
+@import "text/text.scss";
+
+//import containers
+@import "containers/sidebar.scss";
+@import "containers/header.scss";
+@import "containers/players.scss";
+@import "containers/features.scss";
+@import "containers/place.scss";
+@import "containers/platforms.scss";
+@import "containers/gallery.scss";
+@import "containers/footer.scss";

@@ -1,0 +1,21 @@
+@import "../../node_modules/reset.css/reset.css";
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #F5F5F5;
+  line-height: 113%;
+}
