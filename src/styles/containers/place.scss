@@ -1,7 +1,26 @@
 .place {
 	&-images {
-		background-color: $blue-dark;
+		background: url(../img/place_background.png) center / cover no-repeat;
+
+		//grid rule for main layout
 		grid-column: space-start / col-end 4;
+
+		//position images in place-images block
+		display: grid;
+		grid-template-columns: repeat(16, 1fr);
+		grid-template-rows: repeat(24, 1fr);
+
+		&__img1 {
+			width: 100%;
+			grid-column: 3 / 15;
+			grid-row: 4 / 17;
+		}
+		&__img2 {
+			width: 100%;
+			grid-column: 6 / -1;
+			grid-row: 10 / 23;
+			transform: translateX(3.5rem);
+		}
 	}
 
 	&-text {

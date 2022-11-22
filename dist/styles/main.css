@@ -133,8 +133,25 @@ body {
 }
 
 .place-images {
-  background-color: #101D2C;
+  background: url(../img/place_background.png) center/cover no-repeat;
   grid-column: space-start/col-end 4;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+}
+
+.place-images__img1 {
+  width: 100%;
+  grid-column: 3/15;
+  grid-row: 4/17;
+}
+
+.place-images__img2 {
+  width: 100%;
+  grid-column: 6/-1;
+  grid-row: 10/23;
+  -webkit-transform: translateX(3.5rem);
+  transform: translateX(3.5rem);
 }
 
 .place-text {

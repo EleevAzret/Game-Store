@@ -1,0 +1,19 @@
+.btn {
+	&:link, &:visited {
+		display: inline-block;
+		padding: 1.5rem 3rem;
+		background-color: $green-light;
+		font-weight: 700;
+		font-size: 1.6rem;
+		line-height: 2rem;
+		color: $white;
+		text-decoration: none;
+
+		transition: all .2s;
+	}
+
+	&:hover {
+		background-color: $white;
+		color: $green-light;
+	}
+}
