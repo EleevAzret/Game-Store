@@ -1,4 +1,85 @@
 .gallery {
 	background-color: $blue-dark;
+	padding: 1.5rem;
+
+	//grid rule for main layout
 	grid-column: space-start / space-end;
+
+	//grid layout for gallery
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(7, 4vw);
+	grid-gap: 1.5rem;
+
+	&__item {
+		&_1 {
+			grid-column: 1 / span 2;
+			grid-row: 1 / span 2;
+		}
+		&_2 {
+			grid-column: 3 / span 3;
+			grid-row: 1 / span 3;
+		}
+		&_3 {
+			grid-column: 6;
+			grid-row: 1 / span 2;
+		}
+		&_4 {
+			grid-column: 7 / span 2;
+			grid-row: 1 / span 2;
+		}
+		&_5 {
+			grid-column: 1 / span 2;
+			grid-row: 3 / span 3;
+		}
+		&_6 {
+			grid-column: 3 / span 2;
+			grid-row: 4 / span 2;
+		}
+		&_7 {
+			grid-column: 5;
+			grid-row: 4;
+		}
+		&_8 {
+			grid-column: 6 / span 2;
+			grid-row: 3 / span 2;
+		}
+		&_9 {
+			grid-column: 8;
+			grid-row: 3 / span 3;
+		}
+		&_10 {
+			grid-column: 1;
+			grid-row: 6 / span 2;
+		}
+		&_11 {
+			grid-column: 2 / span 2;
+			grid-row: 6 / span 2;
+		}
+		&_12 {
+			grid-column: 4;
+			grid-row: 6 / span 2;
+		}
+		&_13 {
+			grid-column: 5 / span 3;
+			grid-row: 5 / span 3;
+		}
+		&_14 {
+			grid-column: 8;
+			grid-row: 6 / span 2;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		cursor: zoom-in;
+		transition: all .3s;
+		&:hover {
+			opacity: .5;
+			transform: scale(1.2);
+		}
+	}
 }
