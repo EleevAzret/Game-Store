@@ -189,7 +189,49 @@ body {
 .sidebar {
   background-color: #425844;
   grid-column: sidebar-start/sidebar-end;
-  grid-row: 1/-1;
+  width: 8rem;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.burger {
+  border: none;
+  height: 0.2rem;
+  width: 5rem;
+  background-color: #F5F5F5;
+  position: relative;
+  top: 3.5rem;
+  left: 1.5rem;
+  cursor: pointer;
+}
+
+.burger::after,
+.burger::before {
+  content: "";
+  height: 0.2rem;
+  width: 5rem;
+  background-color: #F5F5F5;
+  position: absolute;
+}
+
+.burger::after {
+  top: 1rem;
+  left: 0;
+}
+
+.burger::before {
+  top: -1rem;
+  left: 0;
+}
+
+.burger__toggle {
+  width: 5rem;
+  height: 2.5rem;
+  position: absolute;
+  top: -1rem;
+  opacity: 0;
 }
 
 .header {
