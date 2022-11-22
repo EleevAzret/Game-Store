@@ -18,4 +18,63 @@ body {
   font-size: 1.6rem;
   color: #F5F5F5;
   line-height: 113%;
+  background-color: #F5F5F5;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 80vh -webkit-min-content 40vw repeat(3, -webkit-min-content);
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end space-start] minmax(6rem, 1fr) [content-start] repeat(8, [col-start] minmax(-webkit-min-content, 14rem) [col-end]) [content-end] minmax(6rem, 1fr) [space-end];
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end space-start] minmax(6rem, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [content-end] minmax(6rem, 1fr) [space-end];
+}
+
+.wrapper > * {
+  color: red;
+  padding: 40px;
+  font-size: 25px;
+}
+
+.sidebar {
+  background-color: #425844;
+  grid-column: sidebar-start/sidebar-end;
+  grid-row: 1/-1;
+}
+
+.header {
+  grid-column: space-start/col-end 6;
+  background-color: #101D2C;
+}
+
+.players {
+  background-color: #101D2C;
+  grid-column: col-start 7/space-end;
+}
+
+.features {
+  grid-column: content-start/content-end;
+}
+
+.place-images {
+  background-color: #101D2C;
+  grid-column: space-start/col-end 4;
+}
+
+.place-text {
+  background-color: #101D2C;
+  grid-column: col-start 5/space-end;
+}
+
+.platforms {
+  grid-column: content-start/content-end;
+}
+
+.gallery {
+  background-color: #101D2C;
+  grid-column: space-start/space-end;
+}
+
+.footer {
+  background-color: #101D2C;
+  grid-column: space-start/space-end;
 }
