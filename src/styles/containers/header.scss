@@ -1,4 +1,51 @@
 .header {
+	background: linear-gradient(0deg, rgba(#000, .7), rgba(#000, .7)), url(../img/header-background.png) center / cover no-repeat;
+	padding: 5rem 3rem 5rem 5rem;
+
+	//grid rule for main layout
 	grid-column: space-start / col-end 6;
-	background-color: $blue-dark;
+
+	//grid rule for header items
+	display: grid;
+	grid-template-rows: 1fr max-content max-content 1fr;
+
+	&__btn {
+		justify-self: start;
+		align-self: start;
+	}
+
+	&__logo {
+		justify-self: center;
+	}
+
+	&__text-line {
+		justify-self: center;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		color: $grey;
+		width: 100%;
+
+		display: grid;
+		grid-template-columns: 1fr max-content 1fr;
+		grid-gap: 2rem;
+
+		&::after, &::before {
+			content: "";
+			height: .1rem;
+			background-color: $grey;
+			display: block;
+			align-self: center;
+		}
+	}
+
+	&__images {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template: 2rem;
+		justify-items: center;
+		img {
+			height: 2.5rem;
+			filter: brightness(70%);
+		}
+	}
 }

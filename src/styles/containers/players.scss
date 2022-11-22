@@ -1,4 +1,41 @@
 .players {
 	background-color: $blue-dark;
+
+	//grid rule for main layout
 	grid-column: col-start 7 / space-end;
+
+	//grid layout for players section
+	display: grid;
+	grid-template-columns: min-content max-content;
+	grid-gap: 4rem 2rem;
+	justify-content: center;
+	align-content: center;
+
+	align-items: center;
+
+	&__avatar {
+		border-radius: 10rem;
+		width: 7rem;
+		transition: all .2s;
+
+		&:hover {
+			filter: drop-shadow(0 0 2rem $green-light);
+			transform: scale(1.1);
+		}
+	}
+
+	&__title {
+		color: $green-light;
+		grid-column: 1 / -1;
+		justify-self: center;
+	}
+
+	&__name {
+		color: $white;
+	}
+
+	&__score {
+		color: $grey;
+		font-weight: 300;
+	}
 }
