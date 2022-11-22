@@ -1,5 +1,9 @@
 @import "../../node_modules/reset.css/reset.css";
 
+.mb30 {
+  margin-bottom: 3rem;
+}
+
 *,
 ::after,
 ::before {
@@ -66,6 +70,24 @@ body {
   color: #61A568;
 }
 
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  background-color: #61A568;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #F5F5F5;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #F5F5F5;
+  color: #61A568;
+}
+
 .sidebar {
   background-color: #425844;
   grid-column: sidebar-start/sidebar-end;
@@ -117,7 +139,15 @@ body {
 
 .place-text {
   background-color: #101D2C;
+  padding: 0 4vw;
   grid-column: col-start 5/space-end;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+}
+
+.place-text__text {
+  margin-bottom: 4rem;
 }
 
 .platforms {

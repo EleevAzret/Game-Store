@@ -6,6 +6,18 @@
 
 	&-text {
 		background-color: $blue-dark;
+		padding: 0 4vw;
+
+		//grid rule for main layout
 		grid-column: col-start 5 / space-end;
+
+		//centering elements in place-text container with grid layout
+		display: grid;
+		align-content: center;
+		justify-items: start;
+
+		&__text {
+			margin-bottom: 4rem;
+		}
 	}
 }
