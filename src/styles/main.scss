@@ -10,6 +10,9 @@
 @import "base.scss";
 @import "text/text.scss";
 
+//import components
+@import "components/buttons.scss";
+
 //import containers
 @import "containers/sidebar.scss";
 @import "containers/header.scss";

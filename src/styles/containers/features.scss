@@ -1,3 +1,30 @@
 .features {
+	//grid rule for main layout
 	grid-column: content-start / content-end;
+
+	//grid layout for features section
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+	grid-gap: 3rem 4rem;
+	align-items: start;
+
+	padding: 15rem 0;
+}
+
+.feature {
+	//grid layout for every feature element
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	grid-gap: 1.5rem 2.5rem;
+
+	&__icon {
+		width: 4.5rem;
+		height: 4.5rem;
+		grid-row: 1 / span 2;
+		transform: translateY(-1rem);
+	}
+
+	&__text {
+		color: $green-dark;
+	}
 }

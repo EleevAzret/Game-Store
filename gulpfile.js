@@ -6,15 +6,18 @@ const autoprefixer = require('gulp-autoprefixer');
 const path = require('path');
 const browserSync = require('browser-sync').create();
 
+//cleaning dist directory
 function clean() {
 	return del('./dist/*');
 }
 
+//task for html files
 function html() {
 	return gulp.src('./src/**/*.html')
 					.pipe(gulp.dest('./dist'));
 }
 
+//task compilation main.scss file to css
 function styles() {
 	return gulp.src('./src/styles/main.scss')
 					.pipe(sass().on('error', sass.logError))
@@ -24,22 +27,25 @@ function styles() {
 					.pipe(browserSync.stream());
 }
 
+//task for transfer default css files in dist directory
 function defaultStyles() {
 	return gulp.src('./src/styles/defaults/**/*')
 					.pipe(gulp.dest('./dist/styles/default'));
 }
 
-
+//task for transfer JavaScript files in dist directory
 function js() {
 	return gulp.src('./src/scripts/**/*.js')
 					.pipe(gulp.dest('./dist/scripts'));
 }
 
+//task for transfer all images in dist directory
 function img() {
 	return gulp.src('./src/img/**/*')
 					.pipe(gulp.dest('./dist/img'));
 }
 
+//task that looks for changes in files
 function watch() {
 	browserSync.init({
 		server: {
