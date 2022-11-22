@@ -1,4 +1,13 @@
 .footer {
 	background-color: $blue-dark;
+	padding: 8rem 0;
+	border-top: .3rem solid $white;
+
+	//grid rule for main layout
 	grid-column: space-start / space-end;
+
+	//grid layout for footer items
+	display: grid;
+	justify-items: center;
+	grid-gap: 8rem;
 }

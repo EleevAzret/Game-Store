@@ -1,0 +1,30 @@
+.menu {
+	width: 80%;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	grid-gap: 3rem;
+	justify-items: center;
+
+	&__item {
+		&:link, &:visited {
+			font-size: 1.4rem;
+			text-decoration: none;
+			color: $white;
+			font-weight: 300;
+			line-height: 2rem;
+
+			transition: all .1s ease-out;
+		}
+
+		&:hover {
+			transform: translateY(-.5rem) scale(1.2);
+			text-shadow: 0 1rem .5rem  rgba($green-light, .25);
+			color: $green-light;
+		}
+
+		&:active {
+			transform: translateY(-.2rem)
+		}
+	}
+}

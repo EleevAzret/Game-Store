@@ -12,6 +12,7 @@
 	grid-gap: 1.5rem;
 
 	&__item {
+		transition: all .3s;
 		&_1 {
 			grid-column: 1 / span 2;
 			grid-row: 1 / span 2;
@@ -77,9 +78,15 @@
 
 		cursor: zoom-in;
 		transition: all .3s;
-		&:hover {
+	}
+
+	&__item:hover {
+		transform: scale(1.2);
+		background-color: $blue-dark;
+		z-index: 1;
+	}
+
+	&__item:hover &__img {
 			opacity: .5;
-			transform: scale(1.2);
-		}
 	}
 }

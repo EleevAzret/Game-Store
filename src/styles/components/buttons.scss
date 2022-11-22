@@ -9,10 +9,13 @@
 		color: $white;
 		text-decoration: none;
 
-		transition: all .2s;
+		background: linear-gradient(110deg, $green-light 0%, $green-light 60%, $white 60%, $white 100%);
+		background-size: 270%;
+		transition: all .3s cubic-bezier(.53,.53,.22,.21);
 	}
 
 	&:hover {
+		background-position: 100%;
 		background-color: $white;
 		color: $green-light;
 	}
