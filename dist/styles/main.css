@@ -88,6 +88,70 @@ body {
   color: #61A568;
 }
 
+.card {
+  background-color: #101D2C;
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 4fr) 1fr;
+  justify-items: center;
+}
+
+.card__img {
+  width: 100%;
+  grid-column: 1/-1;
+}
+
+.card__title {
+  grid-column: 2/4;
+  text-align: center;
+  justify-self: center;
+  width: 100%;
+  display: inline-block;
+  padding: 1.5rem 0;
+  background-color: #425844;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-weight: 700;
+}
+
+.card__svg {
+  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.card__btn {
+  grid-column: 1/-1;
+  padding: 1.5rem 0;
+  text-align: center;
+  justify-self: stretch;
+}
+
+.card__content {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.card__geo {
+  grid-area: 3/2/4/3;
+  margin-bottom: 4.5rem;
+}
+
+.card__players {
+  grid-area: 3/3/4/4;
+  margin-bottom: 4.5rem;
+}
+
+.card__credit {
+  grid-area: 4/2/5/3;
+  margin-bottom: 3rem;
+}
+
+.card__monitor {
+  grid-area: 4/3/5/4;
+  margin-bottom: 3rem;
+}
+
 .sidebar {
   background-color: #425844;
   grid-column: sidebar-start/sidebar-end;
@@ -107,7 +171,7 @@ body {
 .features {
   grid-column: content-start/content-end;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   grid-gap: 3rem 4rem;
   align-items: start;
   padding: 15rem 0;
@@ -168,7 +232,11 @@ body {
 }
 
 .platforms {
+  padding: 15rem 0;
   grid-column: content-start/content-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 4rem 6rem;
 }
 
 .gallery {

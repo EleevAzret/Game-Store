@@ -1,3 +1,11 @@
 .platforms {
+	padding: 15rem 0;
+
+	//grid rule for main layout
 	grid-column: content-start / content-end;
+
+	//grid layout for platforms section
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-gap: 4rem 6rem;
 }
