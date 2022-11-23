@@ -194,6 +194,22 @@ body {
   position: fixed;
   left: 0;
   top: 0;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.sidebar__menu {
+  padding-left: 8rem;
+  padding-top: 10rem;
+  text-align: right;
+  justify-items: end;
+}
+
+.sidebar__menu .menu__item::after {
+  content: "";
+  width: 8rem;
+  height: 0.1rem;
+  color: #F5F5F5;
 }
 
 .burger {
