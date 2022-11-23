@@ -208,7 +208,7 @@ body {
   font-size: 1.8rem;
   position: relative;
   left: 50rem;
-  transition: all 0.5s cubic-bezier(0.69, 0.69, 0.87, 0.9);
+  transition: left 0.5s cubic-bezier(0.69, 0.69, 0.87, 0.9);
 }
 
 .sidebar__menu .menu__item::after {
@@ -586,6 +586,10 @@ body {
   .sidebar__menu {
     width: 100%;
     padding: 10rem 2rem 0 2rem;
+  }
+
+  .sidebar__menu .menu__item {
+    transition: top 0.5s cubic-bezier(0.69, 0.69, 0.87, 0.9);
   }
 
   .sidebar__menu .menu__item {

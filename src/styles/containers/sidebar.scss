@@ -37,7 +37,11 @@
 			position: relative;
 			left: 50rem;
 
-			transition: all .5s cubic-bezier(.69,.69,.87,.9);
+			transition: left .5s cubic-bezier(.69,.69,.87,.9);
+
+			@include media(s) {
+				transition: top .5s cubic-bezier(.69,.69,.87,.9);
+			}
 
 			@include media(s) {
 				left: 0;
