@@ -192,8 +192,6 @@ body {
   width: 8rem;
   height: 100vh;
   position: fixed;
-  left: 0;
-  top: 0;
   overflow: hidden;
   z-index: 100;
 }
@@ -213,18 +211,25 @@ body {
 }
 
 .burger {
-  border: none;
+  position: relative;
+  cursor: pointer;
+  height: 3rem;
+  width: 5rem;
+  top: 3.5rem;
+  left: 1.5rem;
+}
+
+.burger__toggle {
   height: 0.2rem;
   width: 5rem;
   background-color: #F5F5F5;
-  position: relative;
-  top: 3.5rem;
-  left: 1.5rem;
+  position: absolute;
+  top: 1rem;
   cursor: pointer;
 }
 
-.burger::after,
-.burger::before {
+.burger__toggle::after,
+.burger__toggle::before {
   content: "";
   height: 0.2rem;
   width: 5rem;
@@ -232,22 +237,14 @@ body {
   position: absolute;
 }
 
-.burger::after {
+.burger__toggle::after {
   top: 1rem;
   left: 0;
 }
 
-.burger::before {
+.burger__toggle::before {
   top: -1rem;
   left: 0;
-}
-
-.burger__toggle {
-  width: 5rem;
-  height: 2.5rem;
-  position: absolute;
-  top: -1rem;
-  opacity: 0;
 }
 
 .header {
@@ -306,11 +303,14 @@ body {
   background-color: #101D2C;
   grid-column: col-start 7/space-end;
   display: grid;
-  grid-template-columns: -webkit-min-content -webkit-max-content;
-  grid-template-columns: min-content max-content;
   grid-gap: 4rem 2rem;
   justify-content: center;
   align-content: center;
+  align-items: center;
+}
+
+.players__item {
+  display: flex;
   align-items: center;
 }
 
@@ -318,6 +318,7 @@ body {
   border-radius: 10rem;
   width: 7rem;
   transition: all 0.2s;
+  margin-right: 2rem;
 }
 
 .players__avatar:hover {
@@ -329,8 +330,7 @@ body {
 
 .players__title {
   color: #61A568;
-  grid-column: 1/-1;
-  justify-self: center;
+  text-align: center;
 }
 
 .players__name {
@@ -525,4 +525,118 @@ body {
   display: grid;
   justify-items: center;
   grid-gap: 8rem;
+}
+
+@media only screen and (max-width: 1170px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .wrapper {
+    grid-template-rows: 6rem calc(100vh - 6rem) -webkit-min-content -webkit-min-content -webkit-min-content repeat(3, -webkit-min-content);
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(3, min-content);
+    grid-template-columns: [space-start] minmax(6rem, 1fr) [content-start] repeat(8, [col-start] minmax(-webkit-min-content, 14rem) [col-end]) [content-end] minmax(6rem, 1fr) [space-end];
+    grid-template-columns: [space-start] minmax(6rem, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [content-end] minmax(6rem, 1fr) [space-end];
+  }
+
+  .sidebar {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    height: 6rem;
+    width: 100%;
+    position: static;
+  }
+
+  .burger {
+    top: 2rem;
+    left: 90%;
+  }
+
+  .header {
+    grid-column: space-start/space-end;
+  }
+
+  .players {
+    grid-column: space-start/space-end;
+    padding: 3rem 0;
+  }
+
+  .players {
+    display: grid;
+    grid-template-columns: repeat(3, -webkit-min-content);
+    grid-template-columns: repeat(3, min-content);
+    justify-content: space-around;
+  }
+
+  .players__item {
+    flex-direction: column;
+  }
+
+  .players__avatar {
+    width: 10rem;
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
+
+  .players__title {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+
+  .features {
+    padding: 8rem 0;
+  }
+
+  .place-images {
+    grid-column: 1/-1;
+  }
+
+  .place-images__img1 {
+    grid-column: 2/12;
+  }
+
+  .place-images__img2 {
+    grid-column: 4/-3;
+  }
+
+  .place-text {
+    padding: 4rem 4vw;
+  }
+
+  .place-text {
+    grid-column: 1/-1;
+    grid-row: 5/6;
+  }
+
+  .platforms {
+    padding: 8rem 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .burger {
+    width: 3rem;
+  }
+
+  .burger__toggle {
+    width: 3rem;
+  }
+
+  .burger__toggle::after,
+  .burger__toggle::before {
+    width: 3rem;
+  }
+
+  .players {
+    display: grid;
+    grid-template-columns: repeat(3, -webkit-min-content);
+    grid-template-columns: repeat(3, min-content);
+    justify-content: space-evenly;
+  }
+
+  .players__item {
+    text-align: center;
+  }
 }

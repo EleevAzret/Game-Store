@@ -5,6 +5,10 @@
 	//grid rule for main layout
 	grid-column: space-start / col-end 6;
 
+	@include media(s) {
+		grid-column: space-start / space-end;
+	}
+
 	//grid rule for header items
 	display: grid;
 	grid-template-rows: 1fr max-content max-content 1fr;

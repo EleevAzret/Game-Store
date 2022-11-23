@@ -9,6 +9,10 @@
 	align-items: start;
 
 	padding: 15rem 0;
+
+	@include media(s) {
+		padding: 8rem 0;
+	}
 }
 
 .feature {

@@ -8,4 +8,8 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 	grid-gap: 4rem 6rem;
+
+	@include media(s) {
+		padding: 8rem 0;
+	}
 }

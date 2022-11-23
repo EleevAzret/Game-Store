@@ -4,10 +4,16 @@
 	width: 8rem;
 	height: 100vh;
 	position: fixed;
-	left: 0;
-	top: 0;
 	overflow: hidden;
 	z-index: 100;
+
+	@include media(s) {
+		grid-row: 1 / 2;
+		grid-column: 1 / -1;
+		height: 6rem;
+		width: 100%;
+		position: static;
+	}
 
 	&__menu {
 		padding-left: 8rem;
@@ -28,38 +34,54 @@
 }
 
 .burger {
-	border: none;
-	height: .2rem;
-	width: 5rem;
-	background-color: $white;
 	position: relative;
+	cursor: pointer;
+	height: 3rem;
+	width: 5rem;
 	top: 3.5rem;
 	left: 1.5rem;
-	cursor: pointer;
 
-	&::after, &::before {
-		content: "";
+	@include media(s) {
+		top: 2rem;
+		left: 90%;
+	}
+
+	@include media(xs) {
+		width: 3rem;
+	}
+
+	&__toggle {
 		height: .2rem;
 		width: 5rem;
 		background-color: $white;
 		position: absolute;
-	}
-
-	&::after {
 		top: 1rem;
-		left: 0;
-	}
+		cursor: pointer;
 
-	&::before {
-		top: -1rem;
-		left: 0;
-	}
+		@include media(xs) {
+			width: 3rem;
+		}
+	
+		&::after, &::before {
+			content: "";
+			height: .2rem;
+			width: 5rem;
+			background-color: $white;
+			position: absolute;
 
-	&__toggle {
-		width: 5rem;
-		height: 2.5rem;
-		position: absolute;
-		top: -1rem;
-		opacity: 0;
+			@include media(xs) {
+				width: 3rem;
+			}
+		}
+	
+		&::after {
+			top: 1rem;
+			left: 0;
+		}
+	
+		&::before {
+			top: -1rem;
+			left: 0;
+		}
 	}
 }

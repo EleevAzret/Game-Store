@@ -21,7 +21,7 @@ $grey: #AAAAAA;
 	}
 
 	@if $screen == m {
-		@media only screen and (max-width: 1240px) {
+		@media only screen and (max-width: 1170px) {
 			@content;
 		}
 	}

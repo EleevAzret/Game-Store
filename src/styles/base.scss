@@ -6,6 +6,9 @@
 
 html {
 	font-size: 62.5%;
+	@include media(m) {
+		font-size: 50%;
+	}
 }
 
 body {
@@ -21,4 +24,9 @@ body {
 	display: grid;
 	grid-template-rows: 100vh min-content 40vw repeat(3, min-content);
 	grid-template-columns: [sidebar-start] 8rem [sidebar-end space-start] minmax(6rem, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [content-end] minmax(6rem, 1fr) [space-end];
+
+	@include media(s) {
+		grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(3, min-content);
+		grid-template-columns: [space-start] minmax(6rem, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [content-end] minmax(6rem, 1fr) [space-end];
+	}
 }

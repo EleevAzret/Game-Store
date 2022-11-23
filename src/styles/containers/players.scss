@@ -4,30 +4,70 @@
 	//grid rule for main layout
 	grid-column: col-start 7 / space-end;
 
+	@include media(s) {
+		grid-column: space-start / space-end;
+		padding: 3rem 0;
+	}
+
 	//grid layout for players section
 	display: grid;
-	grid-template-columns: min-content max-content;
 	grid-gap: 4rem 2rem;
 	justify-content: center;
 	align-content: center;
 
 	align-items: center;
 
+	@include media(s) {
+		display: grid;
+		grid-template-columns: repeat(3, min-content);
+		justify-content: space-around;
+	}
+
+	@include media(xs) {
+		display: grid;
+		grid-template-columns: repeat(3, min-content);
+		justify-content: space-evenly;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+
+		@include media(s) {
+			flex-direction: column;
+		}
+
+		@include media(xs) {
+			text-align: center;
+		}
+	}
+
 	&__avatar {
 		border-radius: 10rem;
 		width: 7rem;
 		transition: all .2s;
+		margin-right: 2rem;
 
 		&:hover {
 			filter: drop-shadow(0 0 2rem $green-light);
 			transform: scale(1.1);
 		}
+
+		@include media(s) {
+			width: 10rem;
+			margin-bottom: 2rem;
+			margin-right: 0;
+		}
 	}
 
 	&__title {
 		color: $green-light;
-		grid-column: 1 / -1;
-		justify-self: center;
+		text-align: center;
+
+		@include media(s) {
+			grid-column: 1 / -1;
+			width: 100%;
+		}
 	}
 
 	&__name {
