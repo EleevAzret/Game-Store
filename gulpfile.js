@@ -35,8 +35,8 @@ function defaultStyles() {
 
 //task for transfer JavaScript files in dist directory
 function js() {
-	return gulp.src('./src/scripts/**/*.js')
-					.pipe(gulp.dest('./dist/scripts'));
+	return gulp.src('./src/js/**/*.js')
+					.pipe(gulp.dest('./dist/js'));
 }
 
 //task for transfer all images in dist directory
@@ -54,7 +54,7 @@ function watch() {
 	});
 
 	gulp.watch('./src/**/*.html', html);
-	gulp.watch('./src/scripts/**/*.js', js);
+	gulp.watch('./src/js/**/*.js', js);
 	gulp.watch('./src/styles/**/*.scss', styles);
 	gulp.watch('./src/styles/default/**/*', defaultStyles);
 	gulp.watch('./src/img/**/*', img);

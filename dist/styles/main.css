@@ -194,13 +194,21 @@ body {
   position: fixed;
   overflow: hidden;
   z-index: 100;
+  transition: all 0.5s;
 }
 
 .sidebar__menu {
   padding-left: 8rem;
   padding-top: 10rem;
-  text-align: right;
-  justify-items: end;
+  text-align: center;
+  justify-items: center;
+}
+
+.sidebar__menu .menu__item {
+  font-size: 1.8rem;
+  position: relative;
+  left: 50rem;
+  transition: all 0.5s cubic-bezier(0.69, 0.69, 0.87, 0.9);
 }
 
 .sidebar__menu .menu__item::after {
@@ -211,12 +219,12 @@ body {
 }
 
 .burger {
-  position: relative;
+  position: absolute;
   cursor: pointer;
   height: 3rem;
   width: 5rem;
   top: 3.5rem;
-  left: 1.5rem;
+  right: 1.5rem;
 }
 
 .burger__toggle {
@@ -226,6 +234,7 @@ body {
   position: absolute;
   top: 1rem;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .burger__toggle::after,
@@ -235,6 +244,7 @@ body {
   width: 5rem;
   background-color: #F5F5F5;
   position: absolute;
+  transition: all 0.5s;
 }
 
 .burger__toggle::after {
@@ -245,6 +255,30 @@ body {
 .burger__toggle::before {
   top: -1rem;
   left: 0;
+}
+
+.sidebar.active {
+  width: 30%;
+}
+
+.sidebar.active .sidebar__menu .menu__item {
+  left: 0;
+}
+
+.sidebar.active .burger__toggle {
+  width: 0;
+}
+
+.sidebar.active .burger__toggle::after {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.sidebar.active .burger__toggle::before {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 0;
 }
 
 .header {
@@ -549,9 +583,28 @@ body {
     position: static;
   }
 
+  .sidebar__menu {
+    width: 100%;
+    padding: 10rem 2rem 0 2rem;
+  }
+
+  .sidebar__menu .menu__item {
+    left: 0;
+    top: -50rem;
+  }
+
   .burger {
     top: 2rem;
     left: 90%;
+  }
+
+  .sidebar.active {
+    width: 100%;
+    height: 30vh;
+  }
+
+  .sidebar.active .sidebar__menu .menu__item {
+    top: 0;
   }
 
   .header {
@@ -616,6 +669,10 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .sidebar__menu {
+    padding: 6rem 2rem 0 2rem;
+  }
+
   .burger {
     width: 3rem;
   }
